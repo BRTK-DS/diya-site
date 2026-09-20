@@ -200,6 +200,18 @@ export default function FeedDivGame({ navigate }) {
 
   // Start game
   const startGame = () => {
+    // Unlock Web Audio on mobile gesture
+    try {
+      if (!audioCtxRef.current) {
+        audioCtxRef.current = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtxRef.current.state === 'suspended') {
+        audioCtxRef.current.resume();
+      }
+    } catch {
+      // Ignore audio error
+    }
+
     const canvas = canvasRef.current;
     const width = canvas ? canvas.width : 600;
     const height = canvas ? canvas.height : 700;
@@ -231,6 +243,16 @@ export default function FeedDivGame({ navigate }) {
     setCombo(0);
     setIsNewRecord(false);
     setGameState('playing');
+
+    // Smooth scroll to game stage on mobile devices if needed
+    if (window.innerWidth <= 768) {
+      setTimeout(() => {
+        const stage = document.querySelector('.game-stage-wrapper');
+        if (stage) {
+          stage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 80);
+    }
   };
 
   // Main game loop
@@ -628,7 +650,11 @@ export default function FeedDivGame({ navigate }) {
     if (!canvas) return;
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    let clientX = e.clientX;
+    if (e.touches && e.touches.length > 0) {
+      clientX = e.touches[0].clientX;
+    }
+    if (typeof clientX !== 'number') return;
     const targetX = (clientX - rect.left) * scaleX;
     engineRef.current.targetX = targetX;
   };
@@ -656,7 +682,8 @@ export default function FeedDivGame({ navigate }) {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
-            <span>Wróć do strony głównej diya.com.pl</span>
+            <span className="back-link-full">Wróć do strony głównej diya.com.pl</span>
+            <span className="back-link-short">Wróć</span>
           </button>
 
           <button
@@ -664,7 +691,7 @@ export default function FeedDivGame({ navigate }) {
             className="game-sound-btn"
             title={isSoundMuted ? 'Włącz dźwięki' : 'Wycisz dźwięki'}
           >
-            {isSoundMuted ? '🔇 Dźwięk: Wył.' : '🔊 Dźwięk: Wł.'}
+            {isSoundMuted ? '🔇 Wyciszony' : '🔊 Dźwięk'}
           </button>
         </div>
 
@@ -675,8 +702,7 @@ export default function FeedDivGame({ navigate }) {
           <p className="game-story-intro">
             Div zgłodniał. Znowu… 🐈⬛<br />
             Pomóż kotu Diyi złapać do koszyka jak najwięcej spadającego jedzenia. 
-            Poruszaj Divem w lewo i prawo, łap smakołyki, unikaj rzeczy, których zdecydowanie nie powinien jeść, 
-            i spróbuj pobić swój rekord!
+            Poruszaj Divem w lewo i prawo, łap smakołyki, unikaj przeszkód i pobij swój rekord!
           </p>
         </div>
 
@@ -723,7 +749,8 @@ export default function FeedDivGame({ navigate }) {
               width={600}
               height={700}
               className="game-canvas"
-              onMouseMove={handlePointerMove}
+              onPointerDown={handlePointerMove}
+              onPointerMove={handlePointerMove}
               onTouchMove={handlePointerMove}
               onTouchStart={handlePointerMove}
             />
@@ -737,7 +764,7 @@ export default function FeedDivGame({ navigate }) {
                   </div>
                   <h2>Gotowy nakarmić Diva?</h2>
                   <p className="start-tips">
-                    🐭 <strong>Sterowanie:</strong> Ruszaj myszką, przeciągaj palcem po ekranie lub używaj klawiszy <strong>← → / A D</strong>.
+                    🐭 <strong>Sterowanie:</strong> Ruszaj przyciskami <strong>LEWO / PRAWO</strong> poniżej, przeciągaj palcem po planszy lub używaj klawiszy <strong>← → / A D</strong>.
                   </p>
                   <div className="items-legend">
                     <div className="legend-group good">
@@ -818,6 +845,63 @@ export default function FeedDivGame({ navigate }) {
                 </div>
               </div>
             )}
+          </div>
+
+          {/* Mobilne przyciski sterowania dla kciuków */}
+          <div className="game-mobile-controls" aria-label="Sterowanie mobilne">
+            <button
+              type="button"
+              className="mobile-ctrl-btn ctrl-left"
+              onPointerDown={(e) => {
+                e.preventDefault();
+                engineRef.current.keys.left = true;
+              }}
+              onPointerUp={(e) => {
+                e.preventDefault();
+                engineRef.current.keys.left = false;
+              }}
+              onPointerLeave={() => {
+                engineRef.current.keys.left = false;
+              }}
+              onPointerCancel={() => {
+                engineRef.current.keys.left = false;
+              }}
+              aria-label="W lewo"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+              </svg>
+              <span>W LEWO</span>
+            </button>
+
+            <div className="mobile-ctrl-guide">
+              <span className="ctrl-guide-txt">Dotykaj planszy lub użyj przycisków</span>
+            </div>
+
+            <button
+              type="button"
+              className="mobile-ctrl-btn ctrl-right"
+              onPointerDown={(e) => {
+                e.preventDefault();
+                engineRef.current.keys.right = true;
+              }}
+              onPointerUp={(e) => {
+                e.preventDefault();
+                engineRef.current.keys.right = false;
+              }}
+              onPointerLeave={() => {
+                engineRef.current.keys.right = false;
+              }}
+              onPointerCancel={() => {
+                engineRef.current.keys.right = false;
+              }}
+              aria-label="W prawo"
+            >
+              <span>W PRAWO</span>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+              </svg>
+            </button>
           </div>
         </div>
 

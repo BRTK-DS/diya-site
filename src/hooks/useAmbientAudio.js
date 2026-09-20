@@ -1,74 +1,91 @@
 import { useState, useRef, useEffect } from 'react';
 
+const AMBIENT_SRC = '/assets/audio/ambient.mp3';
+const TARGET_VOLUME = 0.35; // Subtelna głośność tła (ambient)
+
 export function useAmbientAudio() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioCtxRef = useRef(null);
-  const nodesRef = useRef([]);
+  const audioRef = useRef(null);
+  const fadeIntervalRef = useRef(null);
+
+  // Inicjalizacja instancji audio
+  useEffect(() => {
+    const audio = new Audio(AMBIENT_SRC);
+    audio.loop = true;
+    audio.preload = 'metadata';
+    audioRef.current = audio;
+
+    const onPlay = () => setIsPlaying(true);
+    const onPause = () => setIsPlaying(false);
+    const onEnded = () => setIsPlaying(false);
+
+    audio.addEventListener('play', onPlay);
+    audio.addEventListener('pause', onPause);
+    audio.addEventListener('ended', onEnded);
+
+    return () => {
+      if (fadeIntervalRef.current) {
+        clearInterval(fadeIntervalRef.current);
+      }
+      audio.removeEventListener('play', onPlay);
+      audio.removeEventListener('pause', onPause);
+      audio.removeEventListener('ended', onEnded);
+      audio.pause();
+      audio.src = '';
+      audioRef.current = null;
+    };
+  }, []);
 
   const toggleSound = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (fadeIntervalRef.current) {
+      clearInterval(fadeIntervalRef.current);
+      fadeIntervalRef.current = null;
+    }
+
     if (isPlaying) {
-      // Wyciszanie i zatrzymanie
-      if (audioCtxRef.current) {
-        audioCtxRef.current.close();
-        audioCtxRef.current = null;
-        nodesRef.current = [];
-      }
-      setIsPlaying(false);
+      // Łagodne wyciszenie (fade-out)
+      const step = 0.05;
+      fadeIntervalRef.current = setInterval(() => {
+        if (audio.volume > step) {
+          audio.volume = Math.max(0, audio.volume - step);
+        } else {
+          audio.volume = 0;
+          audio.pause();
+          setIsPlaying(false);
+          clearInterval(fadeIntervalRef.current);
+          fadeIntervalRef.current = null;
+        }
+      }, 50);
     } else {
-      // Inicjalizacja nastrojowej harmonii słowiańsko-nordyckiej (D minor drone z harmonicznymi)
-      try {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        const ctx = new AudioContext();
-        audioCtxRef.current = ctx;
+      // Start z zerową głośnością i łagodne wejście (fade-in)
+      audio.volume = 0;
+      const playPromise = audio.play();
 
-        const masterGain = ctx.createGain();
-        masterGain.gain.setValueAtTime(0.001, ctx.currentTime);
-        masterGain.gain.exponentialRampToValueAtTime(0.12, ctx.currentTime + 2.5); // łagodne wejście
-        masterGain.connect(ctx.destination);
-
-        // Ton podstawowy D (146.83 Hz) oraz kwinta A (220 Hz) i oktawa D (293.66 Hz)
-        const frequencies = [73.42, 146.83, 220.0, 293.66, 440.0];
-
-        frequencies.forEach((freq, index) => {
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-
-          osc.type = index % 2 === 0 ? 'sine' : 'triangle';
-          osc.frequency.setValueAtTime(freq, ctx.currentTime);
-
-          // Subtelne falowanie wysokości (vibrato/lfo)
-          const lfo = ctx.createOscillator();
-          const lfoGain = ctx.createGain();
-          lfo.frequency.setValueAtTime(0.2 + index * 0.1, ctx.currentTime);
-          lfoGain.gain.setValueAtTime(1.5, ctx.currentTime);
-          lfo.connect(osc.frequency);
-          lfo.start();
-
-          // Poziom głośności poszczególnych harmonicznych
-          const individualGain = 0.25 / (index + 1);
-          gain.gain.setValueAtTime(individualGain, ctx.currentTime);
-
-          osc.connect(gain);
-          gain.connect(masterGain);
-          osc.start();
-
-          nodesRef.current.push(osc, lfo);
-        });
-
-        setIsPlaying(true);
-      } catch (e) {
-        console.warn('AudioContext nie mógł zostać uruchomiony:', e);
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+            const step = 0.035;
+            fadeIntervalRef.current = setInterval(() => {
+              if (audio.volume + step < TARGET_VOLUME) {
+                audio.volume = Math.min(TARGET_VOLUME, audio.volume + step);
+              } else {
+                audio.volume = TARGET_VOLUME;
+                clearInterval(fadeIntervalRef.current);
+                fadeIntervalRef.current = null;
+              }
+            }, 60);
+          })
+          .catch((err) => {
+            console.warn('Odtwarzanie ambientu zablokowane lub przerwane:', err);
+            setIsPlaying(false);
+          });
       }
     }
   };
-
-  useEffect(() => {
-    return () => {
-      if (audioCtxRef.current) {
-        audioCtxRef.current.close();
-      }
-    };
-  }, []);
 
   return { isPlaying, toggleSound };
 }

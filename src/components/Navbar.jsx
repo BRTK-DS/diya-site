@@ -86,7 +86,7 @@ export default function Navbar({ isSoundPlaying, toggleSound, navigate }) {
                 </>
               )}
             </svg>
-            <span>{isSoundPlaying ? 'Klimat: Wł.' : 'Klimat'}</span>
+            <span className="sound-toggle-label">{isSoundPlaying ? 'Klimat: Wł.' : 'Klimat'}</span>
           </button>
 
           <button
@@ -109,25 +109,29 @@ export default function Navbar({ isSoundPlaying, toggleSound, navigate }) {
       {/* Mobilne menu drawer */}
       {mobileMenuOpen && (
         <nav className="mobile-drawer" aria-label="Menu mobilne nawigacji">
-          <a href="#hero" onClick={(e) => handleNav(e, '/')}>Start</a>
-          <a href="#o-diyi" onClick={closeMobileMenu}>Kim jest Diya?</a>
-          <a href="#minecraft" onClick={closeMobileMenu}>Minecraft</a>
-          <a href="#muzyka" onClick={closeMobileMenu}>Muzyka</a>
-          <a href="#grafika" onClick={closeMobileMenu}>Modele & Grafika</a>
-          <a href="#wydarzenia" onClick={closeMobileMenu}>Wydarzenia</a>
-          <a href="#kontakt" onClick={closeMobileMenu}>Social & Kontakt</a>
-          <button 
-            onClick={(e) => handleNav(e, '/gra')} 
-            style={{ textAlign: 'left', background: 'none', border: 'none', color: 'var(--c-light)', fontSize: '1rem', fontWeight: 700, padding: '0.5rem 0', cursor: 'pointer' }}
-          >
-            🎮 Gra: Nakarm Diva!
-          </button>
-          <button 
-            onClick={(e) => handleNav(e, '/linki')} 
-            style={{ textAlign: 'left', background: 'none', border: 'none', color: 'var(--c-base)', fontSize: '1rem', fontWeight: 700, padding: '0.5rem 0', cursor: 'pointer' }}
-          >
-            🔗 Wszystkie linki (Bio page)
-          </button>
+          <div className="mobile-drawer-links">
+            <a href="#hero" onClick={(e) => handleNav(e, '/')}>Start</a>
+            <a href="#o-diyi" onClick={closeMobileMenu}>Kim jest Diya?</a>
+            <a href="#minecraft" onClick={closeMobileMenu}>Minecraft</a>
+            <a href="#muzyka" onClick={closeMobileMenu}>Muzyka</a>
+            <a href="#grafika" onClick={closeMobileMenu}>Modele & Grafika</a>
+            <a href="#wydarzenia" onClick={closeMobileMenu}>Wydarzenia</a>
+            <a href="#kontakt" onClick={closeMobileMenu}>Social & Kontakt</a>
+          </div>
+          <div className="mobile-drawer-actions">
+            <button 
+              onClick={(e) => handleNav(e, '/gra')} 
+              className="drawer-action-btn drawer-game-btn"
+            >
+              🎮 Zagraj: Nakarm Diva!
+            </button>
+            <button 
+              onClick={(e) => handleNav(e, '/linki')} 
+              className="drawer-action-btn drawer-links-btn"
+            >
+              🔗 Wszystkie linki (Bio page)
+            </button>
+          </div>
         </nav>
       )}
     </header>
