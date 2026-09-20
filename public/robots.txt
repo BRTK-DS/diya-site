@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diya.com.pl/sitemap.xml
