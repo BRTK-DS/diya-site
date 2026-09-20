@@ -84,13 +84,13 @@ export default function BioLinksPage({ navigate }) {
         {
           title: 'Tipply - Wesprzyj twórczość',
           subtitle: 'Bezpośrednie wsparcie projektów i rozwoju kanałów',
-          url: 'https://tipply.pl/@diyayt',
+          url: 'https://tipply.pl/@C4llmediya',
           icon: '☕'
         },
         {
           title: 'PLvtuber Wiki - Profil Diyi',
           subtitle: 'Encyklopedyczne podsumowanie działalności i lore',
-          url: 'https://plvtuber.fandom.com/pl/wiki/CallMeDiya',
+          url: 'https://plvtuber.pl/@diya',
           icon: '📖'
         },
         {

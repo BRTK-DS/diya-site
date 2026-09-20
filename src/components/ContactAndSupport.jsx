@@ -18,7 +18,7 @@ export default function ContactAndSupport() {
       tag: 'Minecraft & Live',
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
         </svg>
       )
     },
@@ -80,7 +80,7 @@ export default function ContactAndSupport() {
     {
       name: 'X (Twitter)',
       handle: '@C4llMeDiya',
-      url: 'https://x.com/home?lang=pl',
+      url: 'https://x.com/C4llMeDiya',
       tag: 'Aktualności',
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -159,7 +159,7 @@ export default function ContactAndSupport() {
                   🌐 Profil PLvtuber
                 </a>
                 <a
-                  href="https://plvtuber.pl/@diya"
+                  href="https://virtualyoutuber.fandom.com/pl/wiki/Diya"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="persona-tag"
@@ -177,7 +177,7 @@ export default function ContactAndSupport() {
               <span className="section-tag">Wsparcie Społeczności</span>
               <h3 style={{ fontSize: '1.75rem', margin: '0.5rem 0 0.75rem' }}>Wesprzyj Twórczość</h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
-                Podoba Ci się to, co tworzy Diya? Możesz bezpośrednio wesprzeć powstawanie nowych animacji, 
+                Podoba Ci się to, co tworzy Diya? Możesz bezpośrednio wesprzeć powstawanie nowych animacji,
                 projektów Minecraft oraz autorskiej muzyki dark folk!
               </p>
 
@@ -190,7 +190,7 @@ export default function ContactAndSupport() {
                   style={{ justifyContent: 'center' }}
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                   </svg>
                   <span>Wspieranie na YouTube</span>
                 </a>
