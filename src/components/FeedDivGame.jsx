@@ -608,9 +608,7 @@ export default function FeedDivGame({ navigate }) {
     playSfx('gameover');
 
     const finalScore = engineRef.current.score;
-    let newBest = false;
     if (finalScore > highScore) {
-      newBest = true;
       setHighScore(finalScore);
       setIsNewRecord(true);
       try {
