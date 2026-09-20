@@ -22,7 +22,7 @@ export default function FaqSection() {
     },
     {
       q: 'Czym jest lore postaci Diyi i kim jest kot Div?',
-      a: 'Wizerunek Diyi posiada własną warstwę fabularną. Według lore Diya jest walkirią, której towarzyszy Div — czarny, zmiennokształtny kot o eterycznych skrzydłach. Lore stanowi baśniowe tło dla jej twórczości i wzbogaca kontakt z odbiorcami o motywy dawnych mitologii i wikingów.'
+      a: 'Wizerunek Diyi posiada własną warstwę fabularną. Według lore Diya jest walkirią, której towarzyszy Div - czarny, zmiennokształtny kot o eterycznych skrzydłach. Lore stanowi baśniowe tło dla jej twórczości i wzbogaca kontakt z odbiorcami o motywy dawnych mitologii i wikingów.'
     },
     {
       q: 'Gdzie można oficjalnie śledzić twórczość Diyi?',

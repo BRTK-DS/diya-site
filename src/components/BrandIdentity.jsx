@@ -8,7 +8,7 @@ export default function BrandIdentity() {
           <span className="section-tag">Kim jest Diya?</span>
           <h2 className="section-title">Tożsamość Twórcza & Aliasy</h2>
           <p className="section-subtitle">
-            Jedna twórczyni — wiele wymiarów ekspresji. Poznaj strukturę tożsamości internetowej,
+            Jedna twórczyni - wiele wymiarów ekspresji. Poznaj strukturę tożsamości internetowej,
             łączącej gaming, muzykę i baśniowy świat opowieści.
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function BrandIdentity() {
               </div>
             </div>
             <p className="persona-card-body">
-              Fabularny wizerunek walkirii otoczonej skrzydłami i chowańcem — czarnym, zmiennokształtnym kotem Divem.
+              Fabularny wizerunek walkirii otoczonej skrzydłami i chowańcem - czarnym, zmiennokształtnym kotem Divem.
               Lore stanowi kreatywną ramę dla twórczości, łącząc zamiłowanie do wikingów, mitologii, historii
               i melancholijnej fantastyki.
             </p>
@@ -109,8 +109,8 @@ export default function BrandIdentity() {
           <div className="identity-callout-text">
             <h4>Ważna informacja o marce:</h4>
             <p>
-              Nazwy <strong>Diya</strong>, <strong>CallMeDiya</strong> oraz <strong>C4llMeDiya</strong> odnoszą się 
-              do <strong>tej samej polskiej twórczyni</strong>. CallMeDiya reprezentuje działalność w sferze gamingowo-streamingowej, 
+              Nazwy <strong>Diya</strong>, <strong>CallMeDiya</strong> oraz <strong>C4llMeDiya</strong> odnoszą się
+              do <strong>tej samej polskiej twórczyni</strong>. CallMeDiya reprezentuje działalność w sferze gamingowo-streamingowej,
               zaś projekt <strong>DiyaIRL</strong> skupia jej twórczość wokalną i muzyczną.
             </p>
           </div>

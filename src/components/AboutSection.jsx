@@ -20,7 +20,7 @@ export default function AboutSection() {
     {
       year: '2024',
       title: 'Animacja i większe projekty',
-      desc: 'Kanał osiągnął 15 tys. subskrypcji. Ukazała się jej pierwsza większa autorska animacja 2D — „Opowieść Wigilijna Minecraftowych YouTuberów”, łącząca Minecraft z animacją i opowiadaniem historii, z muzyczną interpretacją „Carol of the Bells / Szczedryk”.'
+      desc: 'Kanał osiągnął 15 tys. subskrypcji. Ukazała się jej pierwsza większa autorska animacja 2D - „Opowieść Wigilijna Minecraftowych YouTuberów”, łącząca Minecraft z animacją i opowiadaniem historii, z muzyczną interpretacją „Carol of the Bells / Szczedryk”.'
     },
     {
       year: '2025',
@@ -30,15 +30,15 @@ export default function AboutSection() {
     {
       year: '2026',
       title: 'SAGA RP, 50 tys. subskrypcji i autorska muzyka',
-      desc: 'Kanał przekroczył 50 tys. subskrypcji na YouTube. Powstała SAGA RP — wielki projekt fabularny rozwijany z Jheyvu. Latem ukazała się autorska „Iskierka”, a we wrześniu „Witaj Pokarmie”. Diya coraz częściej pojawia się również przed kamerą w projektach IRL.'
+      desc: 'Kanał przekroczył 50 tys. subskrypcji na YouTube. Powstała SAGA RP - wielki projekt fabularny rozwijany z Jheyvu. Latem ukazała się autorska „Iskierka”, a we wrześniu „Witaj Pokarmie”. Diya coraz częściej pojawia się również przed kamerą w projektach IRL.'
     }
   ];
 
   const divImages = [
-    { src: '/assets/graphics/extra/div_1.png', alt: 'Kot Div — grafika 1' },
-    { src: '/assets/graphics/extra/div_2.png', alt: 'Kot Div — grafika 2' },
-    { src: '/assets/graphics/extra/div_3.png', alt: 'Kot Div — grafika 3' },
-    { src: '/assets/graphics/extra/div_4.png', alt: 'Kot Div — grafika 4' }
+    { src: '/assets/graphics/extra/div_1.png', alt: 'Kot Div - grafika 1' },
+    { src: '/assets/graphics/extra/div_2.png', alt: 'Kot Div - grafika 2' },
+    { src: '/assets/graphics/extra/div_3.png', alt: 'Kot Div - grafika 3' },
+    { src: '/assets/graphics/extra/div_4.png', alt: 'Kot Div - grafika 4' }
   ];
 
   return (
@@ -59,7 +59,7 @@ export default function AboutSection() {
             <div className="profile-img-wrap">
               <img
                 src="/assets/graphics/extra/diya_profile.jpg"
-                alt="Diya — portret profilowy twórczyni"
+                alt="Diya - portret profilowy twórczyni"
                 className="about-profile-img"
               />
               <span className="profile-badge-valkyrie">Walkiria & Kot Div</span>
@@ -101,7 +101,7 @@ export default function AboutSection() {
             <p>
               Jako VTuberka Diya korzysta z wirtualnego modelu, ale pojawia się również przed kamerą.
               Dzięki temu działalność <strong>CallMeDiya</strong>, projekty IRL i muzyczne <strong>DiyaIRL</strong>
-              są różnymi częściami twórczości tej samej osoby i marki — <strong>Diyi</strong>.
+              są różnymi częściami twórczości tej samej osoby i marki - <strong>Diyi</strong>.
             </p>
 
             <div className="about-highlights-badges">
@@ -143,7 +143,7 @@ export default function AboutSection() {
             <p>
               „Dziś działalność Diyi funkcjonuje na styku kilku światów. CallMeDiya skupia się przede wszystkim na Minecrafcie,
               streamach i projektach fabularnych, natomiast DiyaIRL rozwija muzyczną i artystyczną część jej twórczości.
-              Wspólnym elementem pozostają opowieści — niezależnie od tego, czy powstają w świecie Minecrafta, w animacji,
+              Wspólnym elementem pozostają opowieści - niezależnie od tego, czy powstają w świecie Minecrafta, w animacji,
               w utworze muzycznym czy w projekcie inspirowanym historią i dawnymi baśniami.”
             </p>
           </div>

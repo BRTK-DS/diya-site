@@ -21,21 +21,21 @@ export default function BioLinksPage({ navigate }) {
       category: 'Twórczość & Projekty',
       links: [
         {
-          title: 'YouTube — Minecraft & Gaming',
+          title: 'YouTube - Minecraft & Gaming',
           subtitle: 'Główny kanał z grami, SMP, SAGA RP i animacjami (@callmediya)',
           url: 'https://youtube.com/@callmediya?si=yKZjw5rtqWEw-UGW',
           icon: '🎮',
           highlight: true
         },
         {
-          title: 'YouTube — DiyaIRL (Muzyka & Wokal)',
+          title: 'YouTube - DiyaIRL (Muzyka & Wokal)',
           subtitle: 'Autorska muzyka dark folk, singiel „Iskierka”, teledyski i covery',
           url: 'https://www.youtube.com/@DiyaIRL',
           icon: '🎵',
           highlight: true
         },
         {
-          title: 'Spotify — Diya (Dyskografia)',
+          title: 'Spotify - Diya (Dyskografia)',
           subtitle: 'Słuchaj singla „Iskierka” oraz kolejnych premier w Spotify',
           url: 'https://open.spotify.com/artist/6wYKiPBK7dFYxkc4VLkC1H',
           icon: '🎧'
@@ -53,7 +53,7 @@ export default function BioLinksPage({ navigate }) {
       category: 'Społeczność & Social Media',
       links: [
         {
-          title: 'Discord — Kraina Ryżowych Baśni',
+          title: 'Discord - Kraina Ryżowych Baśni',
           subtitle: 'Oficjalny serwer Discord społeczności Diyi',
           url: 'https://discord.gg/73WYGsAXzx',
           icon: '🏰'
@@ -82,13 +82,13 @@ export default function BioLinksPage({ navigate }) {
       category: 'Wsparcie, Wiedza & Współpraca',
       links: [
         {
-          title: 'Tipply — Wesprzyj twórczość',
+          title: 'Tipply - Wesprzyj twórczość',
           subtitle: 'Bezpośrednie wsparcie projektów i rozwoju kanałów',
           url: 'https://tipply.pl/@diyayt',
           icon: '☕'
         },
         {
-          title: 'PLvtuber Wiki — Profil Diyi',
+          title: 'PLvtuber Wiki - Profil Diyi',
           subtitle: 'Encyklopedyczne podsumowanie działalności i lore',
           url: 'https://plvtuber.fandom.com/pl/wiki/CallMeDiya',
           icon: '📖'
@@ -156,7 +156,7 @@ export default function BioLinksPage({ navigate }) {
           </div>
 
           <p className="biolink-bio-text">
-            Oficjalny hub wszystkich kanałów, muzyki, streamów i społeczności. 
+            Oficjalny hub wszystkich kanałów, muzyki, streamów i społeczności.
             Wybierz miejsce, do którego chcesz dołączyć!
           </p>
         </div>

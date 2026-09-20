@@ -1,5 +1,5 @@
 /* ==========================================================
-   DIYA / CALLMEDIYA — OFICJALNY DESIGN SYSTEM
+   DIYA / CALLMEDIYA - OFICJALNY DESIGN SYSTEM
    Paleta Kolorystyczna:
    #f4cdd4 - jasne akcenty
    #ffc2c9 - kolor bazowy
@@ -8,9 +8,12 @@
 
 :root {
   /* Kolory zdefiniowane przez użytkownika */
-  --c-light: #f4cdd4;          /* Jasne akcenty */
-  --c-base: #ffc2c9;           /* Kolor bazowy */
-  --c-dark: #850044;           /* Kolor ciemny */
+  --c-light: #f4cdd4;
+  /* Jasne akcenty */
+  --c-base: #ffc2c9;
+  /* Kolor bazowy */
+  --c-dark: #850044;
+  /* Kolor ciemny */
 
   /* RGB do przezroczystości */
   --c-light-rgb: 244, 205, 212;
@@ -56,7 +59,9 @@
 }
 
 /* Reset i bazy */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -78,7 +83,7 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   position: relative;
-  background-image: 
+  background-image:
     radial-gradient(circle at 18% 15%, rgba(133, 0, 68, 0.28) 0%, transparent 48%),
     radial-gradient(circle at 82% 65%, rgba(255, 194, 201, 0.1) 0%, transparent 45%),
     radial-gradient(circle at 50% 90%, rgba(133, 0, 68, 0.22) 0%, transparent 50%);
@@ -109,12 +114,17 @@ body {
   z-index: 9999;
   transition: top 0.2s ease;
 }
+
 .skip-to-content:focus {
   top: 1rem;
 }
 
 /* Typografia nagłówków */
-h1, h2, h3, h4, .font-runic {
+h1,
+h2,
+h3,
+h4,
+.font-runic {
   font-family: var(--font-runic);
   letter-spacing: 0.04em;
   font-weight: 700;
@@ -228,7 +238,8 @@ h1, h2, h3, h4, .font-runic {
   white-space: nowrap;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--c-base);
 }
 
@@ -349,10 +360,12 @@ h1, h2, h3, h4, .font-runic {
   .desktop-nav-wrap {
     display: none;
   }
+
   .mobile-toggle {
     display: grid;
     place-items: center;
   }
+
   .mobile-drawer {
     display: flex;
     flex-direction: column;
@@ -361,6 +374,7 @@ h1, h2, h3, h4, .font-runic {
     background: rgba(18, 5, 12, 0.98);
     border-bottom: 1px solid var(--border-glass);
   }
+
   .mobile-drawer a {
     text-decoration: none;
     color: var(--text-main);
@@ -447,8 +461,17 @@ h1, h2, h3, h4, .font-runic {
 }
 
 @keyframes pulse-dot {
-  0%, 100% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.35); opacity: 1; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
 }
 
 .hero-title {
@@ -556,6 +579,7 @@ h1, h2, h3, h4, .font-runic {
   font-size: 0.85rem;
   color: var(--text-muted);
 }
+
 .hero-lore-footnote svg {
   color: var(--c-light);
 }
@@ -581,6 +605,7 @@ h1, h2, h3, h4, .font-runic {
   border: 1px solid var(--c-light);
   box-shadow: 0 4px 22px rgba(133, 0, 68, 0.5);
 }
+
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 28px rgba(133, 0, 68, 0.7), 0 0 15px rgba(244, 205, 212, 0.3);
@@ -592,6 +617,7 @@ h1, h2, h3, h4, .font-runic {
   color: var(--text-main);
   border: 1px solid var(--border-glass);
 }
+
 .btn-secondary:hover {
   background: rgba(45, 14, 30, 0.95);
   border-color: var(--border-light);
@@ -604,6 +630,7 @@ h1, h2, h3, h4, .font-runic {
   border: 1px solid var(--c-light);
   box-shadow: 0 4px 20px rgba(133, 0, 68, 0.4);
 }
+
 .btn-amber:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 26px rgba(133, 0, 68, 0.6);
@@ -968,6 +995,7 @@ h1, h2, h3, h4, .font-runic {
   text-decoration: none;
   transition: var(--transition-smooth);
 }
+
 .mc-anim-link:hover {
   color: var(--c-light);
   transform: translateX(4px);
@@ -1144,8 +1172,18 @@ h1, h2, h3, h4, .font-runic {
 }
 
 @keyframes bar-wave {
-  0%, 100% { height: 20%; background: rgba(255, 194, 201, 0.35); }
-  50% { height: 95%; background: var(--c-light); box-shadow: 0 0 8px var(--c-base); }
+
+  0%,
+  100% {
+    height: 20%;
+    background: rgba(255, 194, 201, 0.35);
+  }
+
+  50% {
+    height: 95%;
+    background: var(--c-light);
+    box-shadow: 0 0 8px var(--c-base);
+  }
 }
 
 .lyrics-excerpt-box {
@@ -1529,6 +1567,7 @@ h1, h2, h3, h4, .font-runic {
   cursor: pointer;
   transition: var(--transition-smooth);
 }
+
 .copy-btn:hover {
   background: var(--c-light);
   color: var(--c-dark);
@@ -1686,8 +1725,13 @@ h1, h2, h3, h4, .font-runic {
 }
 
 @keyframes rotate-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .biolink-title {
@@ -2305,8 +2349,8 @@ h1, h2, h3, h4, .font-runic {
     text-align: center;
     gap: 1.25rem;
   }
+
   .lore-card-footer {
     justify-content: center;
   }
 }
-

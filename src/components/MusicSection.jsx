@@ -40,7 +40,7 @@ export default function MusicSection() {
           <div className="single-cover-frame">
             <img
               src="/assets/images/iskierka_cover.jpg"
-              alt="Okładka singla Iskierka — DiyaIRL"
+              alt="Okładka singla Iskierka - DiyaIRL"
               className="single-cover-img"
               loading="lazy"
             />
@@ -127,7 +127,7 @@ export default function MusicSection() {
               📍 Muzyka Zakorzeniona w Miejscach
             </h4>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.925rem', lineHeight: '1.65' }}>
-              Diya szuka lokacji o własnej duszy i legendzie — szczególnie na <strong>Pomorzu i Pomorzu Zachodnim</strong>.
+              Diya szuka lokacji o własnej duszy i legendzie - szczególnie na <strong>Pomorzu i Pomorzu Zachodnim</strong>.
               W jej teledyskach występują: <strong>Grodzisko w Sopocie</strong> (wczesnośredniowieczny skansen),
               <strong>Kamienne Kręgi w Węsiorach</strong> (kultura wielbarska i Goci),
               <strong>Centrum Słowian i Wikingów Wolin–Jomsborg–Vineta</strong>, kaszubskie plaże oraz

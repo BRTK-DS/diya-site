@@ -26,7 +26,7 @@ export default function LoreSection() {
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" />
               </svg>
-              <span>Div — czarny, zmiennokształtny kot i lojalny towarzysz walkirii</span>
+              <span>Div - czarny, zmiennokształtny kot i lojalny towarzysz walkirii</span>
             </div>
           </div>
 
@@ -34,9 +34,9 @@ export default function LoreSection() {
           <div className="lore-text">
             <h3>Baśniowa Tożsamość</h3>
             <p>
-              Według unikalnego lore Diya ucieleśnia postać <strong>walkirii</strong> — istoty zawieszonej
+              Według unikalnego lore Diya ucieleśnia postać <strong>walkirii</strong> - istoty zawieszonej
               między światem ziemskim a mitycznym, strzegącej zapomnianych pieśni i opowieści.
-              Jej nieodłącznym kompanem jest <strong>Div</strong> — czarny kot o zmiennokształtnej naturze,
+              Jej nieodłącznym kompanem jest <strong>Div</strong> - czarny kot o zmiennokształtnej naturze,
               posiadający zdolność przywoływania eterycznych, świetlistych skrzydeł.
             </p>
             <p>

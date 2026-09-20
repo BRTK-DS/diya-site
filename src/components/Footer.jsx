@@ -64,7 +64,7 @@ export default function Footer({ navigate }) {
               <span className="brand-badge" style={{ marginLeft: '0.25rem' }}>Oficjalna</span>
             </div>
             <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', lineHeight: '1.65', marginBottom: '0.75rem' }}>
-              Oficjalna strona Diyi — łącząca gaming i Minecraft (CallMeDiya), 
+              Oficjalna strona Diyi - łącząca gaming i Minecraft (CallMeDiya),
               autorską muzykę dark folk (DiyaIRL), animacje, modele Live2D oraz baśniowy lore walkirii z kotem Divem.
             </p>
             <span style={{ fontSize: '0.85rem', color: 'var(--c-light)' }}>
@@ -83,14 +83,14 @@ export default function Footer({ navigate }) {
               <a href="#minecraft" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Minecraft & SAGA RP</a>
               <a href="#muzyka" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Muzyka (DiyaIRL)</a>
               <a href="#grafika" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Modele VTuber & Grafika</a>
-              <button 
-                onClick={(e) => handleNav(e, '/gra')} 
+              <button
+                onClick={(e) => handleNav(e, '/gra')}
                 style={{ background: 'none', border: 'none', padding: 0, color: 'var(--c-light)', fontWeight: 600, textAlign: 'left', cursor: 'pointer', fontSize: 'inherit' }}
               >
                 🎮 Minigra: Nakarm Diva!
               </button>
-              <button 
-                onClick={(e) => handleNav(e, '/linki')} 
+              <button
+                onClick={(e) => handleNav(e, '/linki')}
                 style={{ background: 'none', border: 'none', padding: 0, color: 'var(--c-base)', fontWeight: 600, textAlign: 'left', cursor: 'pointer', fontSize: 'inherit' }}
               >
                 🔗 Wszystkie linki (Bio page)
@@ -117,14 +117,14 @@ export default function Footer({ navigate }) {
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Diya. Wszelkie prawa zastrzeżone.</span>
           <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', alignItems: 'center' }}>
-            <button 
-              onClick={(e) => handleNav(e, '/gra')} 
+            <button
+              onClick={(e) => handleNav(e, '/gra')}
               style={{ background: 'none', border: 'none', color: 'var(--c-light)', cursor: 'pointer', fontSize: 'inherit', padding: 0 }}
             >
               Gra Nakarm Diva 🐈⬛
             </button>
-            <button 
-              onClick={(e) => handleNav(e, '/linki')} 
+            <button
+              onClick={(e) => handleNav(e, '/linki')}
               style={{ background: 'none', border: 'none', color: 'var(--c-base)', cursor: 'pointer', fontSize: 'inherit', padding: 0 }}
             >
               Linki Bio
