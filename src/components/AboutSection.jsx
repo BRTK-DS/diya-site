@@ -100,7 +100,7 @@ export default function AboutSection() {
 
             <p>
               Jako VTuberka Diya korzysta z wirtualnego modelu, ale pojawia się również przed kamerą.
-              Dzięki temu działalność <strong>CallMeDiya</strong>, projekty IRL i muzyczne <strong>DiyaIRL</strong>
+              Dzięki temu działalność <strong>CallMeDiya</strong>, projekty IRL i muzyczne <strong>DiyaIRL </strong>
               są różnymi częściami twórczości tej samej osoby i marki - <strong>Diyi</strong>.
             </p>
 

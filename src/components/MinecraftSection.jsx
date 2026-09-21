@@ -72,7 +72,7 @@ export default function MinecraftSection() {
             </div>
             <p className="mc-card-text">
               Jeden z najważniejszych etapów rozwoju minecraftowej działalności Diyi. Projekt mocno związany z twórcami takimi jak
-              <strong> Sagi i Dexsi</strong>, a w materiałach Diyi regularnie pojawiali się Babcia Marysia, Stafson, Szery, LCDX, Dranhis, Rzabek i Creatoreq.
+              <strong> Sagi, Piter, Dexsi, Klarfild i wiele więcej</strong>, a w materiałach Diyi regularnie pojawiali się Babcia Marysia, Stafson, Szery, LCDX, Dranhis, Rzabek, Creatoreq, Bluker i Polu.
             </p>
             <p className="mc-card-text">
               Dla Diyi Anarchia szybko przestała być jedynie serwerem survivalowym. Na kanale pojawiły się motywy fabularne związane z
